@@ -1,0 +1,6 @@
+{
+  "name": "GeM Bid Compliance Verification Platform",
+  "description": "AI-Powered Integrated Bid Compliance Verification Platform for GeM Procurement (CPCL / Ministry of Petroleum & Natural Gas)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Global Print Styles for BidSure Report Printing */
+@media print {
+  /* Hide all non-report navigation & UI elements */
+  header,
+  aside,
+  nav,
+  .no-print,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reset layout constraints (height, overflow, flex) so full report flows onto print pages */
+  html,
+  body,
+  #root,
+  .min-h-screen,
+  .flex,
+  .flex-1,
+  main {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  /* Force white background and dark text for all elements in print mode */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure printable report container spans 100% width with clean white styling */
+  .printable-report {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevent awkward page breaks inside rows, signature blocks, and audit cards */
+  tr,
+  .print-keep-together {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  thead {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+}
